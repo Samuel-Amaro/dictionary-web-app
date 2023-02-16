@@ -15,7 +15,7 @@ export default function PlayButton({src}: PropsAudioPlayer) {
           aria-pressed="false"
           aria-label="Button play audio"
         >
-          <Play />
+         <Play />
         </button>
       </>
     );
