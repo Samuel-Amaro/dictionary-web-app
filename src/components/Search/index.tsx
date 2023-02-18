@@ -1,4 +1,3 @@
-import Input from "../Input";
 import SearchIcon from "../Icons/Search";
 
 export default function Search() {
@@ -8,8 +7,20 @@ export default function Search() {
         role="search"
         aria-label="enter a word to search for its definition"
       >
-        <Input />
-        <SearchIcon />
+        <input
+          type="search"
+          aria-label="Search for any word"
+          placeholder="Search for any word"
+          className="search__input"
+          name="search"
+        />
+        <button
+          type="button"
+          className="button-search"
+          aria-label="button search"
+        >
+          <SearchIcon />
+        </button>
       </form>
     );
 }

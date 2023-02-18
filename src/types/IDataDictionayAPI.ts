@@ -8,9 +8,11 @@ export default interface IDataDictionayAPI {
     license: DataLicense;
 }
 
-interface DataPhonetic {
+export interface DataPhonetic {
     text: string;
     audio: string;
+    license: DataLicense;
+    sourceUrl: string;
 }
 
 interface DataMeaning {
