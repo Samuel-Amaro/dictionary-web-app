@@ -4,7 +4,12 @@ import Select from "../Select";
 import Switch from "../Switch";
 import Search from "../Search";
 
-export default function Header() {
+type PropsHeader = {
+  word: string;
+  setWord: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function Header({word, setWord} : PropsHeader) {
     return (
       <header className="header">
         <div className="header__container">
@@ -20,7 +25,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <Search />
+        <Search word={word} setWord={setWord}/>
       </header>
     );
 }

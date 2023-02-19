@@ -15,12 +15,12 @@ export interface DataPhonetic {
     sourceUrl: string;
 }
 
-interface DataMeaning {
+export interface DataMeaning {
     partOfSpeech: string;
     definitions: DataDefinition[];
 }
 
-interface DataDefinition {
+export interface DataDefinition {
     definition: string;
     example: string;
     synonyms: [];

@@ -10,7 +10,11 @@ export default async function fetchDictionaryAPI(word: string): Promise<IDataDic
         }
         const datas: IDataDictionayAPI[] = await response.json();
         return datas;
-    } catch (error) {
+    } catch (e) {
+        if(e instanceof TypeError) {
+            console.error(e.message);
+            console.error(e.cause);
+        }
         return null;
     }
     
