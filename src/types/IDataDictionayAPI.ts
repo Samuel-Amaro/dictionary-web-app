@@ -18,6 +18,8 @@ export interface DataPhonetic {
 export interface DataMeaning {
     partOfSpeech: string;
     definitions: DataDefinition[];
+    antonyms: string[];
+    synonyms: string[];
 }
 
 export interface DataDefinition {

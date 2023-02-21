@@ -6,8 +6,13 @@ import Heading from "../Heading";
 import AudioPlayer from "../AudioPlayer";
 import NotFound from "../NotFound";
 import fetchDictionaryAPI from "../../api/DictionaryAPI";
+import WrapperResult from "../WrapperResult";
+
+//TODO: NÃO TEM COMO INICIAR O APP COM DADOS INICIAS DE UMA PESQUISA, POR ENQUANTO VAMOS DEIXAR EM BRANCO
+//TODO: CONSTRUIR COMPONENTE RESULT AREA
 
 function App() {
+
   const [data, setData] = useState<IDataDictionayAPI | null>(null);
   const [error, setError] = useState(false);
   const [word, setWord] = useState<string>("");
@@ -26,21 +31,9 @@ function App() {
   }
 
   useEffect(() => {
-    /*(async () => {
-      const d = await fetchDictionaryAPI("keyboard");
-      if (d) {
-        //console.log(d[0]);
-        setData(d[0]);
-        setError(false);
-        setWord(d[0].word);
-      } else {
-        setData(null);
-        setError(true);
-        setWord("");
-      }
-    })();*/
+    //se for word vazia nem faz pesquisa
     if (word === "") {
-      loaderData("keyboard");
+      //loaderData("keyboard");
       return;
     }
     loaderData(word);
@@ -66,6 +59,7 @@ function App() {
             </div>
             <AudioPlayer phonetics={data.phonetics} word={data.word} />
           </section>
+          <WrapperResult meanings={data.meanings}/>
         </main>
       )}
     </>
