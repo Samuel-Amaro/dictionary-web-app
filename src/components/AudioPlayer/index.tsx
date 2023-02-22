@@ -1,5 +1,5 @@
 import { DataPhonetic } from "../../types/IDataDictionayAPI";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Play from "../Icons/Play";
 
 type PropsAudioPlayer = {
@@ -18,40 +18,35 @@ function filterAudioPhonetics(phonetics: DataPhonetic[]) {
 }
 
 export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
-  const srcMediaAudio = filterAudioPhonetics(phonetics);
-  const refAudioElement = useRef<HTMLAudioElement>(null);
   const [btnIsPressed, setBtnIsPressed] = useState(false);
-  const [mediaIsPlayable, setMediaIsPlayable] = useState(false);
+  const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(
+    null
+  );
 
   function playAudio() {
-    if (refAudioElement.current && mediaIsPlayable) {
-      refAudioElement.current.play();
+    if (audioElement && audioElement.readyState >= 2) {
+      audioElement.play();
     }
     setBtnIsPressed(!btnIsPressed);
   }
 
+  useEffect(() => {
+    const srcMediaAudio = filterAudioPhonetics(phonetics);
+    if (srcMediaAudio) {
+      const audio = new Audio(srcMediaAudio);
+      audio.addEventListener("ended", () => {
+        setBtnIsPressed(false);
+      });
+      setAudioElement(audio);
+    } else {
+      setAudioElement(null);
+    }
+  }, [phonetics]);
+
   return (
     /*aria-pressed: true -> audio sendo reproduzido, false -> audio mudo, não reproduzido*/
-    srcMediaAudio ? (
+    /*srcMediaAudio*/ audioElement ? (
       <div className="container-audio">
-        <audio
-          ref={refAudioElement}
-          src={srcMediaAudio}
-          onLoadedData={() => {
-            if (
-              refAudioElement.current &&
-              refAudioElement.current.readyState >= 3
-            ) {
-              console.log("pronto pode ouvir");
-              setMediaIsPlayable(true);
-              return;
-            }
-          }}
-          onEnded={() => {
-            console.log("terminou de reproduzir");
-            setBtnIsPressed(false);
-          }}
-        ></audio>
         <button
           className="button-play"
           type="button"
@@ -63,13 +58,12 @@ export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
           }}
           onKeyDown={(event) => {
             if (
-              refAudioElement.current &&
-              (event.key === "Enter" || event.key === " ")
+              event.key === "Enter" ||
+              event.key === " "
             ) {
               playAudio();
             }
           }}
-          disabled={!mediaIsPlayable}
         >
           <Play />
         </button>
