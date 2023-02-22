@@ -1,4 +1,4 @@
-import React, { useState, useRef} from "react";
+import React, { useState, useRef, useEffect} from "react";
 import ArrowDown from "../Icons/ArrowDown";
 
 type PropsSelect = {
@@ -243,12 +243,10 @@ export default function Select({
     }
   }
 
-  /*useEffect(() => {
-    if (optionSelected.option.toLowerCase() !== placeholder.toLowerCase()) {
-      onFilteredRegion(optionSelected.option);
-    }
+  useEffect(() => {
+    const body = document.querySelector("body") as HTMLBodyElement;
+    body.dataset.font = optionSelected.option.toLowerCase().split(" ").join("-");
   }, [optionSelected]);
-  */
 
   return (
     <>

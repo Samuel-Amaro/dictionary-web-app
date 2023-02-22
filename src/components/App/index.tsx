@@ -7,6 +7,7 @@ import AudioPlayer from "../AudioPlayer";
 import NotFound from "../NotFound";
 import fetchDictionaryAPI from "../../api/DictionaryAPI";
 import WrapperResult from "../WrapperResult";
+import { ThemeContextProvider } from "../../context/ThemeContext";
 
 //TODO: NÃO TEM COMO INICIAR O APP COM DADOS INICIAS DE UMA PESQUISA, POR ENQUANTO VAMOS DEIXAR EM BRANCO
 //TODO: CONSTRUIR COMPONENTE RESULT AREA
@@ -39,11 +40,8 @@ function App() {
     loaderData(word);
   }, [word]);
 
-  //TODO: SEPARAR AS PARTES IMPORTANTES POR SECTIONS
-  //TODO: ARRUMAR A FORMA QUANDO O USUARIO COLOCAR UM WORD EM BRANCO E VOLTA PARA KEYBOARD
-
   return (
-    <>
+    <ThemeContextProvider>
       <Header word={word} setWord={setWord} />
       {error && <NotFound />}
       {data && (
@@ -59,10 +57,10 @@ function App() {
             </div>
             <AudioPlayer phonetics={data.phonetics} word={data.word} />
           </section>
-          <WrapperResult meanings={data.meanings}/>
+          <WrapperResult meanings={data.meanings} />
         </main>
       )}
-    </>
+    </ThemeContextProvider>
   );
 }
 
