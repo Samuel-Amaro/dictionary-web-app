@@ -1,3 +1,5 @@
+import NewWindow from "../Icons/NewWindow";
+
 type PropsSource = {
   source: string[];
 };
@@ -13,15 +15,28 @@ export default function Source({ source }: PropsSource) {
             <div className="wrapper__source-container-links">
               {source.map((source, index) => {
                 return (
-                  <a target="_blank" rel="noreferrer" href={source} key={index}>
-                    {source}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={source}
+                    key={index}
+                    className="wrapper__link"
+                  >
+                    <span className="wrapper__text-link">{source}</span>
+                    <NewWindow />
                   </a>
                 );
               })}
             </div>
           ) : (
-            <a target="_blank" rel="noreferrer" href={source[0]}>
-              {source[0]}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={source[0]}
+              className="wrapper__link"
+            >
+              <span className="wrapper__text-link">{source[0]}</span>
+              <NewWindow />
             </a>
           )}
         </div>
