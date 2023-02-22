@@ -4,7 +4,7 @@ export default interface IDataDictionayAPI {
     phonetics: DataPhonetic[];
     origin: string;
     meanings: DataMeaning[];
-    sourceURls: string[];
+    sourceUrls: string[];
     license: DataLicense;
 }
 

@@ -8,9 +8,7 @@ import NotFound from "../NotFound";
 import fetchDictionaryAPI from "../../api/DictionaryAPI";
 import WrapperResult from "../WrapperResult";
 import { ThemeContextProvider } from "../../context/ThemeContext";
-
-//TODO: NÃO TEM COMO INICIAR O APP COM DADOS INICIAS DE UMA PESQUISA, POR ENQUANTO VAMOS DEIXAR EM BRANCO
-//TODO: CONSTRUIR COMPONENTE RESULT AREA
+import Source from "../Source";
 
 function App() {
 
@@ -58,6 +56,7 @@ function App() {
             <AudioPlayer phonetics={data.phonetics} word={data.word} />
           </section>
           <WrapperResult meanings={data.meanings} />
+          <Source source={data.sourceUrls}/>
         </main>
       )}
     </ThemeContextProvider>
