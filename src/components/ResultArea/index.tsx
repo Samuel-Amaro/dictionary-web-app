@@ -40,7 +40,7 @@ export default function ResultArea({ meaning }: PropsResultArea) {
         <p className="result-area__word-term">
           <span className="result-area__term">Antonyms</span>
           <span className="result-area__list-term">
-            {meaning.synonyms.join(" ")}
+            {meaning.antonyms.join(" ")}
           </span>
         </p>
       )}
