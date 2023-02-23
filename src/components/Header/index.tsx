@@ -3,6 +3,7 @@ import Moon from "../Icons/Moon";
 import Select from "../Select";
 import Switch from "../Switch";
 import Search from "../Search";
+import "./Header.css";
 
 type PropsHeader = {
   word: string;

@@ -1,0 +1,54 @@
+@import-normalize;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --color-01: #050505;
+    --color-02: #1F1F1F;
+    --color-03: #2D2D2D;
+    --color-04: #3A3A3A;
+    --color-05: #757575;
+    --color-06: #E9E9E9;
+    --color-07: #F4F4F4;
+    --color-08: #FFFFFF;
+    --color-09: #A445ED;
+    --color-010: #FF5252;
+    --font-size-heading-L: 64px;
+    --line-height-heading-L: 77px;
+    --font-size-heading-M: 24px;
+    --line-height-heading-M: 29px;
+    --font-size-heading-S: 20px;
+    --line-height-heading-S: 24px;
+    --font-size-body-M: 18px;
+    --line-height-body-M: 24px;
+    --font-size-body-S: 14px;
+    --line-height-body-S: 17px;
+    --ff-sans-serif: inter, "Open Sans", "Fira Sans", "Lucida Sans", "Lucida Sans Unicode", "Trebuchet MS", "Liberation Sans", "Nimbus Sans L", sans-serif;
+    --ff-serif: lora, "Lucida Bright", "Lucida Fax", "Palatino", "Palatino Linotype", "Palladio", "URW Palladio", serif;
+    --ff-mono: inconsolata, "Fira Mono", "DejaVu Sans Mono", "Menlo, Consolas", "Liberation Mono", "Monaco", "Lucida Console", monospace;
+    --font-family: var(--ff-sans-serif);
+}
+
+[data-font="sans-serif"]{
+    --font-family: var(--ff-sans-serif);
+}
+
+[data-font="serif"]{
+    --font-family: var(--ff-serif);
+}
+
+[data-font="mono"]{
+    --font-family: var(--ff-mono);
+}
+
+body{
+    font-family: var(--font-family);
+}
+
+.wrapper{
+    padding: 24px 24px 85px 24px;
+}
