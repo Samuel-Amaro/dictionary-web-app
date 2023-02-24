@@ -36,6 +36,14 @@
     /**select componente**/
     --bg-color-menu-select: var(--color-08);
     --color-shadow-menu-select: rgba(0, 0, 0, 0.102);
+    --text-select: var(--color-03);
+    --color-shadow-menu: #0000001a;
+    /**switch component**/
+    --bg-color-switch: var(--color-05);
+    --bg-color-controler-switch: var(--color-08);
+    /**header componente**/
+    --bg-color-column-diviser: var(--color-06);
+    /**generic**/
 }
 
 [data-font="sans-serif"]{
@@ -48,6 +56,14 @@
 
 [data-font="mono"]{
     --font-family: var(--ff-mono);
+}
+
+[data-theme="dark"] {
+    --bg-body: var(--color-01);
+    --bg-color-switch: var(--color-09);
+    --text-select: var(--color-08);
+    --bg-color-menu-select: var(--color-02);
+    --color-shadow-menu: var(--color-09);
 }
 
 /***MOBILE-FIRST***/

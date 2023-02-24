@@ -1,4 +1,5 @@
 import { useThemeContext } from "../../context/ThemeContext";
+import "./Switch.css";
 
 export default function Switch() {
   const themeContext = useThemeContext();
@@ -42,6 +43,7 @@ export default function Switch() {
         }
       }}
       tabIndex={0}
+      title="Toggle Theme"
     >
       <span
         className="switch-controler"

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect} from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ArrowDown from "../Icons/ArrowDown";
 import "./Select.css";
 
@@ -11,9 +11,7 @@ type OptionData = {
   id: number;
 };
 
-export default function Select({
-  optionsSelect,
-}: PropsSelect) {
+export default function Select({ optionsSelect }: PropsSelect) {
   const refCombo = useRef<HTMLDivElement>(null);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const [ignoreBlur, setIgnoreBlur] = useState(false);
@@ -244,9 +242,25 @@ export default function Select({
     }
   }
 
+  function getNameFontFamily(ff: string) {
+    switch (ff) {
+      case "sans-serif":
+        return "inter";
+      case "serif":
+        return "lora";
+      case "mono":
+        return "inconsolata";
+      default:
+        return "sans-serif";
+    }
+  }
+
   useEffect(() => {
     const body = document.querySelector("body") as HTMLBodyElement;
-    body.dataset.font = optionSelected.option.toLowerCase().split(" ").join("-");
+    body.dataset.font = optionSelected.option
+      .toLowerCase()
+      .split(" ")
+      .join("-");
   }, [optionSelected]);
 
   return (
@@ -327,6 +341,7 @@ export default function Select({
                   setIgnoreBlur(true);
                 }}
                 data-value={index}
+                style={{ fontFamily: getNameFontFamily(o.toLowerCase().split(" ").join("-")) }}
               >
                 {o}
               </div>

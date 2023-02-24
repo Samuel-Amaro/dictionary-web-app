@@ -1,0 +1,25 @@
+.switch{
+    width: 40px;
+    height: 20px;
+    background-color: var(--bg-color-switch);
+    border-radius: 10px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.switch-controler{
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-color: var(--bg-color-controler-switch);
+    border-radius: 50%;
+    transition: all ease 0.30s;
+}
+
+.switch[aria-checked="false"] .switch-controler{
+    transform: translateX(1px);
+}
+
+.switch[aria-checked="true"] .switch-controler{
+    transform: translateX(19px);
+}

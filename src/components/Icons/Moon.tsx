@@ -1,7 +1,11 @@
 import classNames from "classnames";
 import { PropsIcon } from "./typePropsIcons";
 
-export default function Moon({ className }: PropsIcon) {
+interface PropsMoonIcon extends PropsIcon{
+  color?: string | undefined;
+}
+
+export default function Moon({ className, color }: PropsMoonIcon) {
   const classNamesMapped = classNames("icon", className);
   return (
     <svg
@@ -13,7 +17,7 @@ export default function Moon({ className }: PropsIcon) {
     >
       <path
         fill="none"
-        stroke="#838383"
+        stroke={color}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
