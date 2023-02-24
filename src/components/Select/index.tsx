@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect} from "react";
 import ArrowDown from "../Icons/ArrowDown";
+import "./Select.css";
 
 type PropsSelect = {
   optionsSelect: string[];
@@ -250,7 +251,7 @@ export default function Select({
 
   return (
     <>
-      <div className={isSelectOpen ? "select select--open" : "select"}>
+      <div className="select">
         <div
           className="select__input"
           id="combo1"
@@ -282,11 +283,13 @@ export default function Select({
           }}
           ref={refCombo}
         >
-          {optionSelected.option}{" "}
+          <span className="select__input-text">{optionSelected.option}</span>{" "}
           <ArrowDown className="select__icon" />
         </div>
         <div
-          className="select__menu"
+          className={
+            isSelectOpen ? "select__menu select__menu--open" : "select__menu"
+          }
           role="listbox"
           id="listbox1"
           aria-labelledby="label-select"

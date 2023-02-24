@@ -17,6 +17,7 @@
     --color-08: #FFFFFF;
     --color-09: #A445ED;
     --color-010: #FF5252;
+    --color-011: #979797;
     --font-size-heading-L: 64px;
     --line-height-heading-L: 77px;
     --font-size-heading-M: 24px;
@@ -31,6 +32,10 @@
     --ff-serif: lora, "Lucida Bright", "Lucida Fax", "Palatino", "Palatino Linotype", "Palladio", "URW Palladio", serif;
     --ff-mono: inconsolata, "Fira Mono", "DejaVu Sans Mono", "Menlo, Consolas", "Liberation Mono", "Monaco", "Lucida Console", monospace;
     --font-family: var(--ff-sans-serif);
+    --bg-body: var(--color-08);
+    /**select componente**/
+    --bg-color-menu-select: var(--color-08);
+    --color-shadow-menu-select: rgba(0, 0, 0, 0.102);
 }
 
 [data-font="sans-serif"]{
@@ -45,8 +50,13 @@
     --font-family: var(--ff-mono);
 }
 
+/***MOBILE-FIRST***/
+
 body{
     font-family: var(--font-family);
+    font-size: var(--font-size-body-S);
+    line-height: var(--line-height-body-S);
+    background-color: var(--bg-body);
 }
 
 .wrapper{
