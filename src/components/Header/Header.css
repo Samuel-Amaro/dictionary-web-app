@@ -1,15 +1,17 @@
-.header__container, .header__container-switch {
+.header__container,
+.header__container-switch {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
 }
 
-.header__container{
-    justify-content: space-between;
+.header__container {
+  justify-content: space-between;
+  margin: 0 0 24px 0;
 }
 
-.header__container-switch{
-    gap: 16px;
+.header__container-switch {
+  gap: 16px;
 }
 
 .header__icon {
@@ -21,9 +23,9 @@
   height: 32px;
 }
 
-.header__icon--moon{
-    width: 20px;
-    height: 20px;
+.header__icon--moon {
+  width: 20px;
+  height: 20px;
 }
 
 .header__controls {

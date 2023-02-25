@@ -44,6 +44,10 @@
     /**header componente**/
     --bg-color-column-diviser: var(--color-06);
     /**generic**/
+    /**search componente**/
+    --color-text-input-search: var(--color-03);
+    --bg-color-input-search: var(--color-07);
+    --color-placeholder-input-search: var(--color-03);
 }
 
 [data-font="sans-serif"]{
@@ -64,6 +68,9 @@
     --text-select: var(--color-08);
     --bg-color-menu-select: var(--color-02);
     --color-shadow-menu: var(--color-09);
+    --color-text-input-search: var(--color-08);
+    --bg-color-input-search: var(--color-02);
+    --color-placeholder-input-search: var(--color-08);
 }
 
 /***MOBILE-FIRST***/
