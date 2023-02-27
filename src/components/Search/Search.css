@@ -20,7 +20,7 @@
     font-size: 16px;
     line-height: 19px;
     font-weight: bold;
-    color: var(--color-text-input-search);
+    color: var(--color-text-body);
     background-color: var(--bg-color-input-search);
     border-radius: 16px;
     padding: 14px 39px 15px 24px;
@@ -29,7 +29,7 @@
 }
 
 .search__input::placeholder{
-    color: var(--color-placeholder-input-search);
+    color: var(--color-text-body);
     font-weight: bold;
     opacity: 0.25;
     mix-blend-mode: normal;

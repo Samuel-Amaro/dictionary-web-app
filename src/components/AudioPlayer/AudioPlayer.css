@@ -1,0 +1,35 @@
+.button-play {
+  display: block;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  background-color: rgb(164, 69, 237, 0.25);
+  border-radius: 50%;
+  mix-blend-mode: normal;
+  padding: 18px 19px 17px 19px;
+  transition: all ease 0.35s;
+}
+
+.container-audio__icon {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  background-color: transparent;
+  border-left: 13px solid var(--color-09);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  transition: all ease 0.35s;
+}
+
+.button-play:hover, .button-play:focus {
+  background-color: rgb(164, 69, 237, 1);
+}
+
+.button-play:is(:hover, :focus) .container-audio__icon {
+  border-left-color: var(--color-08);
+}

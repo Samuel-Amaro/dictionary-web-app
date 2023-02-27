@@ -15,9 +15,10 @@
     --color-06: #E9E9E9;
     --color-07: #F4F4F4;
     --color-08: #FFFFFF;
-    --color-09: #A445ED;
+    --color-09: #a445ed;
     --color-010: #FF5252;
     --color-011: #979797;
+    --color-012: #8F19E8;
     --font-size-heading-L: 64px;
     --line-height-heading-L: 77px;
     --font-size-heading-M: 24px;
@@ -32,23 +33,22 @@
     --ff-serif: lora, "Lucida Bright", "Lucida Fax", "Palatino", "Palatino Linotype", "Palladio", "URW Palladio", serif;
     --ff-mono: inconsolata, "Fira Mono", "DejaVu Sans Mono", "Menlo, Consolas", "Liberation Mono", "Monaco", "Lucida Console", monospace;
     --font-family: var(--ff-sans-serif);
+
+    /**variables colors**/
     --bg-body: var(--color-08);
+    --color-text-body: var(--color-03);
     /**select componente**/
     --bg-color-menu-select: var(--color-08);
-    --color-shadow-menu-select: rgba(0, 0, 0, 0.102);
-    --text-select: var(--color-03);
     --color-shadow-menu: #0000001a;
     /**switch component**/
     --bg-color-switch: var(--color-05);
     --bg-color-controler-switch: var(--color-08);
-    /**header componente**/
-    --bg-color-column-diviser: var(--color-06);
-    /**generic**/
     /**search componente**/
-    --color-text-input-search: var(--color-03);
     --bg-color-input-search: var(--color-07);
-    --color-placeholder-input-search: var(--color-03);
+    /**result area componente**/
+    --bg-color-line-heading: var(--color-06);
 }
+
 
 [data-font="sans-serif"]{
     --font-family: var(--ff-sans-serif);
@@ -65,12 +65,11 @@
 [data-theme="dark"] {
     --bg-body: var(--color-01);
     --bg-color-switch: var(--color-09);
-    --text-select: var(--color-08);
     --bg-color-menu-select: var(--color-02);
     --color-shadow-menu: var(--color-09);
-    --color-text-input-search: var(--color-08);
     --bg-color-input-search: var(--color-02);
-    --color-placeholder-input-search: var(--color-08);
+    --color-text-body: var(--color-08);
+    --bg-color-line-heading: var(--color-04);
 }
 
 /***MOBILE-FIRST***/
@@ -80,6 +79,7 @@ body{
     font-size: var(--font-size-body-S);
     line-height: var(--line-height-body-S);
     background-color: var(--bg-body);
+    transition: all ease 0.30s;
 }
 
 .wrapper{

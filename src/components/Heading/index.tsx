@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import "./Heading.css";
 
 type PropsHeading = {
   children: React.ReactNode;

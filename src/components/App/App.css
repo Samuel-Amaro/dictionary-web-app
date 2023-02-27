@@ -1,0 +1,19 @@
+
+/**section titles**/
+
+.wrapper__title{
+    color: var(--color-text-body);
+    margin: 0 0 8px 0;
+}
+
+.wrapper__subtitle{
+    color: var(--color-09);
+}
+
+.wrapper__section-titles{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 32px 0;
+}

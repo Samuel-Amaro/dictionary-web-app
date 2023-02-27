@@ -1,6 +1,7 @@
 import { DataPhonetic } from "../../types/IDataDictionayAPI";
 import { useEffect, useState } from "react";
 import Play from "../Icons/Play";
+import "./AudioPlayer.css";
 
 type PropsAudioPlayer = {
   phonetics: DataPhonetic[];
@@ -46,35 +47,33 @@ export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
   return (
     /*aria-pressed: true -> audio sendo reproduzido, false -> audio mudo, não reproduzido*/
     /*srcMediaAudio*/ audioElement ? (
-      <div className="container-audio">
-        <button
-          className="button-play"
-          type="button"
-          aria-pressed={btnIsPressed}
-          aria-label="Button play audio"
-          title="Button play audio"
-          onPointerDown={() => {
+      /*<div className="container-audio">*/
+      <button
+        className="button-play"
+        type="button"
+        aria-pressed={btnIsPressed}
+        aria-label="Button play audio"
+        title="Button play audio"
+        onPointerDown={() => {
+          playAudio();
+        }}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
             playAudio();
-          }}
-          onKeyDown={(event) => {
-            if (
-              event.key === "Enter" ||
-              event.key === " "
-            ) {
-              playAudio();
-            }
-          }}
-        >
-          <Play />
-        </button>
-        <details className="container-audio__details">
+          }
+        }}
+      >
+        {/*<Play className="container-audio__icon" />*/}
+        <span className="container-audio__icon"></span>
+      </button>
+    ) : (
+      /*<details className="container-audio__details">
           <summary className="container-audio__summary">
             Audio Transcription
           </summary>
           <p className="container-audio__trascription-audio">{word}</p>
         </details>
-      </div>
-    ) : (
+      </div>*/
       <span className="message">No audio</span>
     )
   );

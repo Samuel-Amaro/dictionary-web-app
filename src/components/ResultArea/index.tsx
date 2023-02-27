@@ -1,33 +1,42 @@
 import { DataMeaning } from "../../types/IDataDictionayAPI";
+import Heading from "../Heading";
+import "./ResultArea.css";
 
 type PropsResultArea = {
   meaning: DataMeaning;
 };
 
 export default function ResultArea({ meaning }: PropsResultArea) {
-  //TODO: CONSTRUIR COMPONENTE AREA DE RESULTADO BASEADO NOS DADOS DA API
-  //console.log(meaning);
   return (
     <section className="result-area">
       <div className="result-area__container">
-        <h3 className="result-area__part-of-speech">
+        <Heading level={3} className="result-area__part-of-speech">
           {meaning.partOfSpeech ? meaning.partOfSpeech : "No part of speech"}
-        </h3>
+        </Heading>
         <span className="result-area__line-diviser"></span>
       </div>
-      <h4 className="result-area__meaning">Meaning</h4>
+      <Heading level={4} className="result-area__meaning">
+        Meaning
+      </Heading>
       {meaning.definitions.length > 0 ? (
         <ul className="list-definitions">
           {meaning.definitions.map((objDefinition, index) => {
             return (
               <li key={index} className="list-definitions__item">
-                <span className="list-definitions__definition">
-                  {objDefinition.definition}
-                </span>
-                {objDefinition.example && (
-                  <span className="list-definitions__example">
-                    {objDefinition.example}
-                  </span>
+                {/*<span className="list-defitions__marker"></span>*/}
+                {objDefinition.example ? (
+                  <p className="list-definitions__text">
+                    <span className="list-definitions__definition">
+                      {objDefinition.definition}
+                    </span>
+                    <span className="list-definitions__example">
+                      {`“${objDefinition.example}”`}
+                    </span>
+                  </p>
+                ) : (
+                  <p className="list-definitions__text">
+                    {objDefinition.definition}
+                  </p>
                 )}
               </li>
             );

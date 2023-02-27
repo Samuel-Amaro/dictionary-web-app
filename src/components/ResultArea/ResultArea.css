@@ -1,0 +1,100 @@
+.result-area{
+    margin: 0 0 32px 0;
+}
+
+.result-area__part-of-speech {
+  color: var(--color-text-body);
+  font-style: italic;
+}
+
+.result-area__container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  align-items: center;
+  margin: 0 0 32px 0;
+}
+
+.result-area__line-diviser {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--bg-color-line-heading);
+}
+
+.result-area__meaning {
+  color: var(--color-05);
+  margin: 0 0 17px 0;
+}
+
+.list-definitions {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: normal;
+  color: var(--color-text-body);
+  list-style-type: none;
+  margin: 0 0 24px 0;
+}
+
+.list-definitions__item::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-012);
+  margin: 10px 20px 0 0;
+  vertical-align: top;
+}
+
+.list-definitions__text {
+  display: inline-block;
+  width: calc(100% - 25px);
+}
+
+.list-definitions__text .list-definitions__example,
+.list-definitions__text .list-definitions__definition {
+  display: block;
+}
+
+.list-definitions__definition{
+    margin: 0 0 13px 0;
+}
+
+.list-definitions__example{
+    color: var(--color-05);
+}
+
+.list-definitions__item:not(:last-child) {
+  margin: 0 0 13px 0;
+}
+
+.result-area__term,
+.result-area__list-term {
+  display: inline-block;
+}
+
+.result-area__term,
+.result-area__list-term {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.result-area__term {
+  font-weight: normal;
+  color: var(--color-05);
+  margin: 0 24px 0 0;
+}
+
+.result-area__list-term {
+    font-weight: bold;
+    color: var(--color-09);
+}
+
+.result-area__word-term:not(:last-child) {
+    margin: 0 0 13px 0;
+}
+
+.result-area > *:last-child{
+    margin: 0;
+}

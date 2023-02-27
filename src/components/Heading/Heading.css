@@ -1,0 +1,25 @@
+/**mobile-first**/
+
+.heading1{
+    font-size: 32px;
+    line-height: 39px;
+    font-weight: bold;
+}
+
+.heading2{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.heading3{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.heading4{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}

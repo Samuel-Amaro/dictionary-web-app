@@ -38,7 +38,7 @@
   display: block;
   height: 32px;
   width: 1px;
-  background-color: var(--bg-color-column-diviser);
+  background-color: var(--color-06);
   margin: 0 16px;
 }
 

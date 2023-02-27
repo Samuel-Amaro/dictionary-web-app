@@ -44,7 +44,7 @@
 }
 
 .select__option, .select__input-text{
-    color: var(--text-select);
+    color: var(--color-text-body);
 }
 
 .select__option:hover, .select__option:focus, .select__option--selected{
