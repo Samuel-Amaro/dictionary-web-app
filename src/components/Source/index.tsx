@@ -1,4 +1,5 @@
 import NewWindow from "../Icons/NewWindow";
+import "./Source.css";
 
 type PropsSource = {
   source: string[];
@@ -23,7 +24,7 @@ export default function Source({ source }: PropsSource) {
                     className="wrapper__link"
                   >
                     <span className="wrapper__text-link">{source}</span>
-                    <NewWindow />
+                    <NewWindow className="wrapper__icon-link"/>
                   </a>
                 );
               })}
