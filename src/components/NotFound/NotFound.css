@@ -1,0 +1,26 @@
+.notfound{
+    margin: 132px 0 0 0;
+}
+
+.notfound__icon{
+    display: block;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 65px;
+    margin: 0 0 44px 0;
+    text-align: center;
+}
+
+.notfound__description{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: var(--color-text-body);
+    margin: 0 0 24px 0;
+}
+
+.notfound__message{
+    text-align: center;
+    color: var(--color-05);
+}
