@@ -1,12 +1,33 @@
+import React from "react";
 import { DataMeaning } from "../../types/IDataDictionayAPI";
 import Heading from "../Heading";
 import "./ResultArea.css";
 
 type PropsResultArea = {
   meaning: DataMeaning;
+  setWord: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function ResultArea({ meaning }: PropsResultArea) {
+//TODO: AO CLICAR EM UM ITEM DE ANTONIMO OU SINONIMO FAZER UMA PESQUISA DIRETA PREENCHENDO O CAMPO DE SEARCH E TRAZENDO O RESULTADO LOGO EM SEGUIDA
+//TODO: TUDO ISSO TEM QUE SER FEITO AO CLICAR NO BUTTON COM O TERMO,
+//TODO: PRIMEIRA FORMA PENSADA DE FAZER, SOMENTE ATUALIZAR O STATE DA WORD QUE IRA AUTOMATICAMENTE FAZER UM SEARCH E CARREGAR NOVOS DADOS PARA O APP
+//TODO: CONSEGUIMOS CLICAR NO BUTTON E FAZER PESQUISA, MAS NÃO CONSEGUIMOS ATUALIZAR O VALOR NO INPUT A CADA VEZ QUE CLICAMOS NO BOTÃO VER COMO ATUALIZAR O VALOR DE UUM INPUT NÃO CONTROLADO NO REACT
+
+export default function ResultArea({ meaning, setWord }: PropsResultArea) {
+
+  function handleEvents(event: React.PointerEvent | React.KeyboardEvent, value: string) {
+    //teclado
+    if(event instanceof KeyboardEvent) {
+      if(event.key === "Enter" || event.key === " ") {
+        setWord(value);
+       return; 
+      }
+      return;
+    }
+    //click
+    setWord(value);
+  }
+
   return (
     <section className="result-area">
       <div className="result-area__container">
@@ -46,20 +67,62 @@ export default function ResultArea({ meaning }: PropsResultArea) {
         <p className="result-area__message">No definitions</p>
       )}
       {meaning.antonyms.length > 0 && (
-        <p className="result-area__word-term">
+        <div className="result-area__word-term">
           <span className="result-area__term">Antonyms</span>
-          <span className="result-area__list-term">
+          <ul className="result-area__list-term">
+            {meaning.antonyms.map((antonym, index) => {
+              return (
+                <li className="result-area__list-item" key={index}>
+                  <button
+                    className="result-area__button-action"
+                    aria-label={`Search term ${meaning.partOfSpeech} ${antonym}`}
+                    type="button"
+                    onPointerDown={(event) => {
+                      handleEvents(event, antonym);
+                    }}
+                    onKeyDown={(event) => {
+                      handleEvents(event, antonym);
+                    }}
+                  >
+                    {antonym}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          {/*<span className="result-area__list-term">
             {meaning.antonyms.join(" ")}
-          </span>
-        </p>
+          </span>*/}
+        </div>
       )}
       {meaning.synonyms.length > 0 && (
-        <p className="result-area__word-term">
+        <div className="result-area__word-term">
           <span className="result-area__term">Synonyms</span>
-          <span className="result-area__list-term">
+          <ul className="result-area__list-term">
+            {meaning.synonyms.map((synonym, index) => {
+              return (
+                <li className="result-area__list-item" key={index}>
+                  <button
+                    className="result-area__button-action"
+                    aria-label={`Search term ${meaning.partOfSpeech} ${synonym}`}
+                    type="button"
+                    onPointerDown={(event) => {
+                      handleEvents(event, synonym);
+                    }}
+                    onKeyDown={(event) => {
+                      handleEvents(event, synonym);
+                    }}
+                  >
+                    {synonym}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          {/*<span className="result-area__list-term">
             {meaning.synonyms.join(" ")}
-          </span>
-        </p>
+      </span>*/}
+        </div>
       )}
     </section>
   );

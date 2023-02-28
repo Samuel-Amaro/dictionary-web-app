@@ -29,7 +29,7 @@ export default function Header({ word, setWord }: PropsHeader) {
           </div>
         </div>
       </div>
-      <Search /*word={word}*/ setWord={setWord} />
+      <Search word={word} setWord={setWord} />
     </header>
   );
 }

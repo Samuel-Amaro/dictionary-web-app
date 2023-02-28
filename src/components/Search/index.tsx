@@ -1,13 +1,13 @@
-import { useRef, useState} from "react";
+import { useRef, useState, useEffect} from "react";
 import SearchIcon from "../Icons/Search";
 import "./Search.css";
 
 type PropsSearch = {
-  /*word: string;*/
+  word: string;
   setWord: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Search({ /*word,*/ setWord }: PropsSearch) {
+export default function Search({ word, setWord }: PropsSearch) {
   const [inputIsInvalid, setInputIsInvalid] = useState(false);
   const refInputSearch = useRef<HTMLInputElement>(null);
 
@@ -26,12 +26,14 @@ export default function Search({ /*word,*/ setWord }: PropsSearch) {
     setWord(refInputSearch.current.value);
   }
 
-  /*useEffect(() => {
-    if (word === "") {
+  useEffect(() => {
+    /*if (word === "") {
       setInputIsInvalid(true);
+    }*/
+    if(refInputSearch.current) {
+      refInputSearch.current.value = word;
     }
-  });
-  */
+  }, [word]);
 
   return (
     <>
@@ -47,6 +49,7 @@ export default function Search({ /*word,*/ setWord }: PropsSearch) {
           placeholder="Search for any word..."
           className={inputIsInvalid ? "search__input search__input--invalid" : "search__input"}
           name="search"
+          /*defaultValue={word}*/
           title="Search for any word..."
           onKeyDown={(event) => {
             if (event.code === "Enter") {

@@ -55,7 +55,7 @@ function App() {
             </div>
             <AudioPlayer phonetics={data.phonetics} word={data.word} />
           </section>
-          <WrapperResult meanings={data.meanings} />
+          <WrapperResult meanings={data.meanings} setWord={setWord}/>
           <Source source={data.sourceUrls}/>
         </main>
       )}
