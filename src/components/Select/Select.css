@@ -1,57 +1,77 @@
-.select{
-    position: relative;
-    background-color: transparent;
-    cursor: pointer;
+.select {
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.select__menu{
-    position: absolute;
-    z-index: 1000;
-    display: none;
-    background-color: var(--bg-color-menu-select);
-    box-shadow: 0px 5px 30px var(--color-shadow-menu);
-    border-radius: 16px;
-    padding: 24px 69px 24px 24px;
-    width: 183px;
-    top: 30px;
-    right: 0;
+.select__menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  background-color: var(--bg-color-menu-select);
+  box-shadow: 0px 5px 30px var(--color-shadow-menu);
+  border-radius: 16px;
+  padding: 24px 69px 24px 24px;
+  width: 183px;
+  top: 30px;
+  right: 0;
+}
+
+.select__menu--open {
+  display: block;
+}
+
+.select__input {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.select__input-text {
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.select__input-text,
+.select__icon {
+  display: inline-block;
+}
+
+.select__icon {
+  width: 12px;
+  height: 6px;
+}
+
+.select__option{
     font-weight: bold;
 }
 
-.select__menu--open{
-    display: block;
+.select__option,
+.select__input-text {
+  color: var(--color-text-body);
 }
 
-.select__input{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 16px;
+.select__option:hover,
+.select__option:focus,
+.select__option--selected {
+  color: var(--color-09);
 }
 
-.select__input-text{
-    font-weight: bold;
+.select__option:not(:last-child) {
+  margin: 0 0 16px 0;
+}
+
+/**BREAKPOINT 550px to tablets**/
+@media screen and (min-width: 550px) {
+  .select__input-text, .select__option {
+    font-size: 18px;
     line-height: 24px;
-}
+    font-weight: bold;
+  }
 
-.select__input-text, .select__icon{
-    display: inline-block;
-}
+  .select__input {
+    gap: 18px;
+  }
 
-.select__icon{
-    width: 12px;
-    height: 6px;
 }
-
-.select__option, .select__input-text{
-    color: var(--color-text-body);
-}
-
-.select__option:hover, .select__option:focus, .select__option--selected{
-    color: var(--color-09);
-}
-
-.select__option:not(:last-child){
-    margin: 0 0 16px 0;
-}
-

@@ -1,64 +1,79 @@
-.search{
-    display: block;
-    width: 100%;
-    position: relative;
+.search {
+  display: block;
+  width: 100%;
+  position: relative;
 }
 
-.search--mg{
-    margin: 0 0 8px 0;
+.search--mg {
+  margin: 0 0 8px 0;
 }
 
-.search__input, .button-search{
-    appearance: none;
-    display: block;
-    font-family: inherit;
+.search__input,
+.button-search {
+  appearance: none;
+  display: block;
+  font-family: inherit;
 }
 
-.search__input{
-    width: 100%;
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
-    color: var(--color-text-body);
-    background-color: var(--bg-color-input-search);
-    border-radius: 16px;
-    padding: 14px 39px 15px 24px;
-    border: none;
-    cursor: pointer;
+.search__input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  color: var(--color-text-body);
+  background-color: var(--bg-color-input-search);
+  border-radius: 16px;
+  padding: 14px 39px 15px 24px;
+  border: none;
+  cursor: pointer;
 }
 
-.search__input::placeholder{
-    color: var(--color-text-body);
-    font-weight: bold;
-    opacity: 0.25;
-    mix-blend-mode: normal;
+.search__input::placeholder {
+  color: var(--color-text-body);
+  font-weight: bold;
+  opacity: 0.25;
+  mix-blend-mode: normal;
 }
 
-.search__input:focus/*, .search__input:hover*/{
-    outline: none;
-    border: 1px solid var(--color-09);
+.search__input:focus/*, .search__input:hover*/ {
+  outline: none;
+  border: 1px solid var(--color-09);
 }
 
-.search__input--invalid{
-    outline: none;
-    border: 1px solid var(--color-010);
+.search__input--invalid {
+  outline: none;
+  border: 1px solid var(--color-010);
 }
 
-.button-search{
-    position: absolute;
-    z-index: 1002;
-    background-color: transparent;
-    border: none;
-    width: 15px;
-    height: 15px;
-    top: 16px;
-    right: 24px;
-    cursor: pointer;
+.button-search {
+  position: absolute;
+  z-index: 1002;
+  background-color: transparent;
+  border: none;
+  width: 15px;
+  height: 15px;
+  top: 16px;
+  right: 24px;
+  cursor: pointer;
 }
 
-.search__invalid-input{
-    display: block;
-    color: var(--color-010);
-    font-weight: normal;
+.search__invalid-input {
+  display: block;
+  color: var(--color-010);
+  font-weight: normal;
+  line-height: 24px;
+}
+
+/**breakpoint 550px to tablets**/
+@media screen and (min-width: 550px) {
+  .search__input {
+    font-size: 20px;
     line-height: 24px;
+    padding: 20px 39px 20px 24px;
+  }
+
+  .button-search {
+    top: 24px;
+    right: 24.45px;
+  }
 }

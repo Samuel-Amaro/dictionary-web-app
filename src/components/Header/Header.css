@@ -1,4 +1,4 @@
-.header{
+.header {
   margin: 0 0 24px 0;
 }
 
@@ -23,8 +23,8 @@
 }
 
 .header__icon--logo {
-  width: 28px;
-  height: 32px;
+  width: 32px;
+  height: 36.5px;
 }
 
 .header__icon--moon {
@@ -49,4 +49,23 @@
 .header__icon-active {
   display: inline-block;
   color: var(--color-09);
+}
+
+/**BREAKPOINT 550px to tablets**/
+@media screen and (min-width: 550px) {
+  .header__diviser {
+    margin: 0 26px;
+  }
+
+  .header__container-switch {
+    gap: 20px;
+  }
+
+  .header__container {
+    margin: 0 0 51.5px 0;
+  }
+
+  .header {
+    margin: 0 0 43px 0;
+  }
 }

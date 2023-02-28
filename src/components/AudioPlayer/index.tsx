@@ -1,6 +1,5 @@
 import { DataPhonetic } from "../../types/IDataDictionayAPI";
 import { useEffect, useState } from "react";
-import Play from "../Icons/Play";
 import "./AudioPlayer.css";
 
 type PropsAudioPlayer = {
