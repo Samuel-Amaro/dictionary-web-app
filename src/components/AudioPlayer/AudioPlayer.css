@@ -26,10 +26,27 @@
   transition: all ease 0.35s;
 }
 
-.button-play:hover, .button-play:focus {
+.button-play:hover,
+.button-play:focus {
   background-color: rgb(164, 69, 237, 1);
 }
 
 .button-play:is(:hover, :focus) .container-audio__icon {
   border-left-color: var(--color-08);
+}
+
+@media screen and (min-width: 550px) {
+  .button-play {
+    width: 75px;
+    height: 75px;
+    padding: 27px 26px 27px 29px;
+  }
+
+  .container-audio__icon {
+    width: 21px;
+    height: 21px;
+    border-left-width: 21px;
+    border-top-width: 10.5px;
+    border-bottom-width: 10.5px;
+  }
 }
