@@ -8,10 +8,7 @@ type PropsResultArea = {
   setWord: React.Dispatch<React.SetStateAction<string>>;
 };
 
-//TODO: AO CLICAR EM UM ITEM DE ANTONIMO OU SINONIMO FAZER UMA PESQUISA DIRETA PREENCHENDO O CAMPO DE SEARCH E TRAZENDO O RESULTADO LOGO EM SEGUIDA
-//TODO: TUDO ISSO TEM QUE SER FEITO AO CLICAR NO BUTTON COM O TERMO,
-//TODO: PRIMEIRA FORMA PENSADA DE FAZER, SOMENTE ATUALIZAR O STATE DA WORD QUE IRA AUTOMATICAMENTE FAZER UM SEARCH E CARREGAR NOVOS DADOS PARA O APP
-//TODO: CONSEGUIMOS CLICAR NO BUTTON E FAZER PESQUISA, MAS NÃO CONSEGUIMOS ATUALIZAR O VALOR NO INPUT A CADA VEZ QUE CLICAMOS NO BOTÃO VER COMO ATUALIZAR O VALOR DE UUM INPUT NÃO CONTROLADO NO REACT
+//TODO: ESTILIZAR PARA TABLETS COMECEI SOMENTE
 
 export default function ResultArea({ meaning, setWord }: PropsResultArea) {
 
@@ -68,7 +65,9 @@ export default function ResultArea({ meaning, setWord }: PropsResultArea) {
       )}
       {meaning.antonyms.length > 0 && (
         <div className="result-area__word-term">
-          <span className="result-area__term">Antonyms</span>
+          <Heading level={4} className="result-area__term">
+            Antonyms
+          </Heading>
           <ul className="result-area__list-term">
             {meaning.antonyms.map((antonym, index) => {
               return (
@@ -97,7 +96,9 @@ export default function ResultArea({ meaning, setWord }: PropsResultArea) {
       )}
       {meaning.synonyms.length > 0 && (
         <div className="result-area__word-term">
-          <span className="result-area__term">Synonyms</span>
+          <Heading level={4} className="result-area__term">
+            Synonyms
+          </Heading>
           <ul className="result-area__list-term">
             {meaning.synonyms.map((synonym, index) => {
               return (

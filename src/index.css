@@ -94,4 +94,9 @@ body {
   .wrapper {
     padding: 58px 40px 118px 39px;
   }
+
+  body {
+    font-size: var(--font-size-body-M);
+    line-height: var(--line-height-body-M);
+  }
 }

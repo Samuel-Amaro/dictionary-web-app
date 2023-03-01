@@ -76,6 +76,8 @@
 
 .result-area__list-term {
   list-style: none;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 .result-area__list-item {
@@ -91,11 +93,11 @@
   border: none;
   background-color: transparent;
   font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   display: block;
   font-weight: bold;
   color: var(--color-09);
-  font-size: 16px;
-  line-height: 19px;
 }
 
 .result-area__button-action:hover {
@@ -105,12 +107,6 @@
 .result-area__button-action:is(:hover, :focus) {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-}
-
-.result-area__term,
-.result-area__button-action {
-  font-size: 16px;
-  line-height: 19px;
 }
 
 .result-area__term {
@@ -125,4 +121,35 @@
 
 .result-area > *:last-child {
   margin: 0;
+}
+
+@media screen and (min-width: 550px) {
+  .result-area__container {
+    gap: 20px;
+    margin: 0 0 40px 0;
+  }
+
+  .result-area__meaning {
+    margin: 0 0 25px 0;
+  }
+
+  .list-definitions {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 40px 0;
+    padding: 0 0 0 22px;
+  }
+
+  .result-area__term {
+    margin: 0 22px 0 0;
+  }
+
+  .result-area__list-term {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .result-area {
+    margin: 0 0 40px 0;
+  }
 }

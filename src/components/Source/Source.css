@@ -1,51 +1,73 @@
-.diviser-line{
-    width: 100%;
-    height: 1px;
-    border: none;
-    border-top: 1px solid var(--bg-color-line-heading);
-    margin: 0 0 24px 0;
+.diviser-line {
+  width: 100%;
+  height: 1px;
+  border: none;
+  border-top: 1px solid var(--bg-color-line-heading);
+  margin: 0 0 24px 0;
 }
 
-.wrapper__source-term{
-    display: inline-block;
-    font-weight: normal;
-    text-decoration: underline;
-    color: var(--color-05);
-    margin: 0 25px 0 0;
+.wrapper__source-term {
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: underline;
+  color: var(--color-05);
+  margin: 0 25px 0 0;
 }
 
-.wrapper__link{
-    display: inline-block;
-    font-weight: normal;
-    color: var(--color-text-body);
+.wrapper__link {
+  display: inline-block;
+  font-weight: normal;
+  color: var(--color-text-body);
 }
 
-.wrapper__text-link{
-    margin: 0 9px 0 0;
-    text-decoration: underline;
+.wrapper__text-link {
+  margin: 0 9px 0 0;
+  text-decoration: underline;
 }
 
-.wrapper__text-link, .wrapper__icon-link{
-    display: inline-block;
+.wrapper__text-link,
+.wrapper__icon-link {
+  display: inline-block;
 }
 
-.wrapper__icon-link{
-    vertical-align: middle;
+.wrapper__icon-link {
+  vertical-align: middle;
 }
 
-.wrapper__link:is(:hover, :focus){
-    color: var(--color-09);
+.wrapper__link:is(:hover, :focus) {
+  color: var(--color-09);
 }
 
-.wrapper__source-container-links{
-    display: inline-block;
-    vertical-align: middle;
+.wrapper__source-container-links {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.wrapper__source-container-links .wrapper__link{
-    display: block;
+.wrapper__source-container-links .wrapper__link {
+  display: block;
 }
 
-.wrapper__source-container-links .wrapper__link:not(:last-child){
-    margin: 0 0 4px 0;
+.wrapper__source-container-links .wrapper__link:not(:last-child) {
+  margin: 0 0 4px 0;
+}
+
+@media screen and (min-width: 550px) {
+  .diviser-line {
+    margin: 0 0 19px 0;
+  }
+
+  .wrapper__source-term,
+  .wrapper__link {
+    font-size: var(--font-size-body-S);
+    line-height: var(--line-height-body-S);
+  }
+
+  .wrapper__source-term {
+    margin: 0 20px 0 0;
+  }
+
+  .wrapper__icon-link{
+    width: 12px;
+    height: 12px;
+  }
 }

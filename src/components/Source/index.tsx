@@ -37,7 +37,7 @@ export default function Source({ source }: PropsSource) {
               className="wrapper__link"
             >
               <span className="wrapper__text-link">{source[0]}</span>
-              <NewWindow />
+              <NewWindow className="wrapper__icon-link"/>
             </a>
           )}
         </div>
