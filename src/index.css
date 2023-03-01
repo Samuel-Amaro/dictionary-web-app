@@ -86,17 +86,25 @@ body {
 }
 
 .wrapper {
-  padding: 24px 24px 85px 24px;
+  margin: 24px 24px 85px 24px;
 }
 
 /**BREAKPOINT 550px to tablets**/
 @media screen and (min-width: 550px) {
   .wrapper {
-    padding: 58px 40px 118px 39px;
+    margin: 58px 40px 118px 39px;
+    max-width: 737px;
   }
 
   body {
     font-size: var(--font-size-body-M);
     line-height: var(--line-height-body-M);
+  }
+}
+
+/**BREAKPOINT 817px to desktop**/
+@media screen and (min-width: 817px) {
+  .wrapper {
+    margin: 58px auto 124px auto;
   }
 }
