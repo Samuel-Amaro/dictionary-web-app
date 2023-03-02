@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/dictionary-web-app/static/css/main.f88defd0.css",
+    "main.js": "/dictionary-web-app/static/js/main.3f90aa21.js",
+    "static/media/Inter-Bold.ttf": "/dictionary-web-app/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
+    "static/media/Inter-Regular.ttf": "/dictionary-web-app/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/Lora-BoldItalic.ttf": "/dictionary-web-app/static/media/Lora-BoldItalic.dfc9b140175b142d7eb2.ttf",
+    "static/media/Lora-Regular.ttf": "/dictionary-web-app/static/media/Lora-Regular.a85f0bab31bffada1e5f.ttf",
+    "static/media/Lora-Bold.ttf": "/dictionary-web-app/static/media/Lora-Bold.df378067bf8c002587b4.ttf",
+    "static/media/Inconsolata-Bold.ttf": "/dictionary-web-app/static/media/Inconsolata-Bold.37f99d4808fcd34262c5.ttf",
+    "static/media/Inconsolata-Regular.ttf": "/dictionary-web-app/static/media/Inconsolata-Regular.54748073d423bc6646f7.ttf",
+    "static/media/Lora-BoldItalic.woff": "/dictionary-web-app/static/media/Lora-BoldItalic.1a3e1cad94a67a307cbc.woff",
+    "static/media/Lora-Bold.woff": "/dictionary-web-app/static/media/Lora-Bold.09e9e1f4ff3dd22f51d7.woff",
+    "static/media/Lora-Regular.woff": "/dictionary-web-app/static/media/Lora-Regular.873ae75e38a70c6a6b55.woff",
+    "static/media/Inconsolata-Bold.woff": "/dictionary-web-app/static/media/Inconsolata-Bold.f148fc87a05211ac0a86.woff",
+    "static/media/Inconsolata-Regular.woff": "/dictionary-web-app/static/media/Inconsolata-Regular.6b1d24a978e96f29baa7.woff",
+    "static/media/Lora-BoldItalic.woff2": "/dictionary-web-app/static/media/Lora-BoldItalic.a71ce07b4d7d58a3a454.woff2",
+    "static/media/Lora-Bold.woff2": "/dictionary-web-app/static/media/Lora-Bold.d23f3b83377aeed2c18d.woff2",
+    "static/media/Lora-Regular.woff2": "/dictionary-web-app/static/media/Lora-Regular.2eb490e2d86cc4a7e648.woff2",
+    "static/media/Inconsolata-Bold.woff2": "/dictionary-web-app/static/media/Inconsolata-Bold.612d7cfa32ed8cf5b1f6.woff2",
+    "static/media/Inconsolata-Regular.woff2": "/dictionary-web-app/static/media/Inconsolata-Regular.f82769e8569366c322b4.woff2",
+    "static/media/inter-bold.woff": "/dictionary-web-app/static/media/inter-bold.4341f60f592a7a6bfa0d.woff",
+    "static/media/inter-regular.woff": "/dictionary-web-app/static/media/inter-regular.c0012a1f64c7c44888ba.woff",
+    "static/media/inter-bold.woff2": "/dictionary-web-app/static/media/inter-bold.7724ac32276765b003c5.woff2",
+    "static/media/inter-regular.woff2": "/dictionary-web-app/static/media/inter-regular.e7edd7924110bcd7679d.woff2",
+    "index.html": "/dictionary-web-app/index.html",
+    "main.f88defd0.css.map": "/dictionary-web-app/static/css/main.f88defd0.css.map",
+    "main.3f90aa21.js.map": "/dictionary-web-app/static/js/main.3f90aa21.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f88defd0.css",
+    "static/js/main.3f90aa21.js"
+  ]
+}
