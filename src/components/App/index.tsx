@@ -19,6 +19,7 @@ function App() {
   async function loaderData(word: string) {
     const d = await fetchDictionaryAPI(word);
     if (d) {
+      console.log(d[0]);
       setData(d[0]);
       setError(false);
       setWord(d[0].word);
