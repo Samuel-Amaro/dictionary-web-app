@@ -8,8 +8,6 @@ type PropsResultArea = {
   setWord: React.Dispatch<React.SetStateAction<string>>;
 };
 
-//TODO: ESTILIZAR PARA TABLETS COMECEI SOMENTE
-
 export default function ResultArea({ meaning, setWord }: PropsResultArea) {
 
   function handleEvents(event: React.PointerEvent | React.KeyboardEvent, value: string) {
@@ -89,9 +87,6 @@ export default function ResultArea({ meaning, setWord }: PropsResultArea) {
               );
             })}
           </ul>
-          {/*<span className="result-area__list-term">
-            {meaning.antonyms.join(" ")}
-          </span>*/}
         </div>
       )}
       {meaning.synonyms.length > 0 && (
@@ -120,9 +115,6 @@ export default function ResultArea({ meaning, setWord }: PropsResultArea) {
               );
             })}
           </ul>
-          {/*<span className="result-area__list-term">
-            {meaning.synonyms.join(" ")}
-      </span>*/}
         </div>
       )}
     </section>

@@ -22,6 +22,7 @@ export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
   const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(
     null
   );
+  const [mediaIsLoaded, setMediaIsLoaded] = useState(false);
 
   function playAudio() {
     if (audioElement && audioElement.readyState >= 2) {
@@ -36,6 +37,12 @@ export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
       const audio = new Audio(srcMediaAudio);
       audio.addEventListener("ended", () => {
         setBtnIsPressed(false);
+        //setMediaIsLoaded(false);
+      });
+      audio.addEventListener("loadeddata", () => {
+        if(audio.readyState >= 2) {
+          setMediaIsLoaded(true);
+        }
       });
       setAudioElement(audio);
     } else {
@@ -43,37 +50,32 @@ export default function AudioPlayer({ phonetics, word }: PropsAudioPlayer) {
     }
   }, [phonetics]);
 
-  return (
-    /*aria-pressed: true -> audio sendo reproduzido, false -> audio mudo, não reproduzido*/
-    /*srcMediaAudio*/ audioElement ? (
-      /*<div className="container-audio">*/
-      <button
-        className="button-play"
-        type="button"
-        aria-pressed={btnIsPressed}
-        aria-label="Button play audio"
-        title="Button play audio"
-        onPointerDown={() => {
+  return audioElement ? (
+    <button
+      className={
+        mediaIsLoaded ? "button-play" : "button-play button-play--padding"
+      }
+      type="button"
+      aria-pressed={btnIsPressed}
+      aria-label="Button play audio"
+      title="Button play audio"
+      onPointerDown={() => {
+        playAudio();
+      }}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
           playAudio();
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            playAudio();
-          }
-        }}
-      >
-        {/*<Play className="container-audio__icon" />*/}
+        }
+      }}
+    >
+      {mediaIsLoaded ? (
         <span className="container-audio__icon"></span>
-      </button>
-    ) : (
-      /*<details className="container-audio__details">
-          <summary className="container-audio__summary">
-            Audio Transcription
-          </summary>
-          <p className="container-audio__trascription-audio">{word}</p>
-        </details>
-      </div>*/
-      <span className="message">No audio</span>
-    )
+      ) : (
+        <span className="message__loader"></span>
+      )}
+    </button>
+  ) : (
+    <span className="message__alert">No audio</span>
   );
+  
 }

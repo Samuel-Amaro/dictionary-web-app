@@ -65,6 +65,7 @@
   --font-family: var(--ff-mono);
 }
 
+/*
 [data-theme="dark"] {
   --bg-body: var(--color-01);
   --bg-color-switch: var(--color-09);
@@ -73,6 +74,18 @@
   --bg-color-input-search: var(--color-02);
   --color-text-body: var(--color-08);
   --bg-color-line-heading: var(--color-04);
+}*/
+
+@media screen and (prefers-color-scheme: dark) {
+  [data-theme="dark"] {
+    --bg-body: var(--color-01);
+    --bg-color-switch: var(--color-09);
+    --bg-color-menu-select: var(--color-02);
+    --color-shadow-menu: var(--color-09);
+    --bg-color-input-search: var(--color-02);
+    --color-text-body: var(--color-08);
+    --bg-color-line-heading: var(--color-04);
+  }
 }
 
 /***MOBILE-FIRST***/
@@ -89,7 +102,6 @@ body {
   margin: 24px 24px 85px 24px;
 }
 
-/**BREAKPOINT 550px to tablets**/
 @media screen and (min-width: 550px) {
   .wrapper {
     margin: 58px 40px 118px 39px;
@@ -102,7 +114,6 @@ body {
   }
 }
 
-/**BREAKPOINT 817px to desktop**/
 @media screen and (min-width: 817px) {
   .wrapper {
     margin: 58px auto 124px auto;
