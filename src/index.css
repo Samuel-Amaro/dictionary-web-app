@@ -65,17 +65,6 @@
   --font-family: var(--ff-mono);
 }
 
-/*
-[data-theme="dark"] {
-  --bg-body: var(--color-01);
-  --bg-color-switch: var(--color-09);
-  --bg-color-menu-select: var(--color-02);
-  --color-shadow-menu: var(--color-09);
-  --bg-color-input-search: var(--color-02);
-  --color-text-body: var(--color-08);
-  --bg-color-line-heading: var(--color-04);
-}*/
-
 @media screen and (prefers-color-scheme: dark) {
   [data-theme="dark"] {
     --bg-body: var(--color-01);
