@@ -59,8 +59,8 @@ Users should be able to:
 - FETCH API
 - [Free Dictionary API](https://dictionaryapi.dev/) - API
 - [React](https://reactjs.org/) - JS library
- - Hooks React
- - Context API
+  - Hooks React
+  - Context API
 
 ## Getting Started with Create React App
 
